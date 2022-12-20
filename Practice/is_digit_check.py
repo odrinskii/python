@@ -10,4 +10,4 @@ def input_numbers(text_input):
     return number
 
 
-input_numbers('Введите число: ')
+# input_numbers('Введите число: ')
