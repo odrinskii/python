@@ -41,9 +41,9 @@ def decoding(txt):
 
 data_in = 'AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEEEEEEEEE'   # 1122335488888666
 print(f'Входные данные: {data_in}')
-s = data_in
-print(f"Выходные данные: {coding(s)}")
-print(f"Данные после декодировки: {decoding(coding(s))}")
+a = data_in
+print(f"Выходные данные: {coding(a)}")
+print(f"Данные после декодировки: {decoding(coding(a))}")
 
 
 # разбор не семинаре
