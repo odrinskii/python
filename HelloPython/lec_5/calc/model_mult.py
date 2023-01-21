@@ -9,5 +9,4 @@ def init(a, b):
 
 
 def do_it():
-    return x + y
-
+    return x * y
