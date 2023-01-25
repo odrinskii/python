@@ -7,6 +7,7 @@
 # + файл с хранением этих строк
 # *Добавить сортировку по имени или по id
 # *Добавить вывод только имени и фамилии
+import view
 from csv import writer
 
 
@@ -22,15 +23,12 @@ def new_data(data):
     read_info = open("contacts.csv", "r")
     new_id = sum(1 for line in read_info)
     data.append(new_id)
-    new_name, new_surname = input("Имя контакта: "), \
-        input("Фамилия контакта: ")
+    new_name, new_surname = view.get_name()
     data.append(new_name)
     data.append(new_surname)
-    new_phone = input("Введите корректный номер телефона(11 цифр): ")
-    while not(new_phone.isnumeric() and len(new_phone) == 11):
-        new_phone = input("Введите кооректный номер телефона: ")
+    new_phone = view.get_phone()
     data.append(new_phone)
-    new_comment = input("Введите комментарий: ")
+    new_comment = view.get_comment()
     data.append(new_comment)
     print(f'Новый контакт: {data}')
     writer_object = writer(add_info)
