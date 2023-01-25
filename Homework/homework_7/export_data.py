@@ -15,7 +15,7 @@ def find_data(text):
         print("Данные не найдены. ")
 
 
-def find_data_by_number(text):
+def find_data_by_number(text):  # на вывод отдаем только имя и фамилию
     import csv
     with open('contacts.csv', encoding='utf-8') as file:
         file_reader = csv.reader(file)
