@@ -31,6 +31,6 @@ def start():
             print(f"Оценки {name} - {main_dict[name]}")
         elif opt == 6:
             break
-        print(main_dict)
+
 
 
