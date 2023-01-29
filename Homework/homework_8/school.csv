@@ -1,0 +1,8 @@
+Арсений,Одринский,{'География': 5},{'Биология': None},{'geo': None},{'bio': None},{'phy': None}
+Станислав,Зенин,{'География': None},{'Биология': None},{'geo': None},{'bio': None},{'phy': None}
+ars,odr,{'geo': None},{'bio': 3},{'phy': None}
+stas,zen,{'geo': 5},{'bio': None},{'phy': None}
+alin,odrin,{'phy': None}
+marsh,odrin,{'phy': None}
+alin,odrin
+marsh,odrin
