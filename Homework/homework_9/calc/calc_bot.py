@@ -29,7 +29,7 @@ def main():
             bot.send_message(message.chat.id, "Введите вычисляемое выражение для действительных чисел (+,-,/,*,//,%) через пробел:")
             bot.register_next_step_handler(message, int_numbers)
         if message.text == "Комплексные числа":
-            bot.send_message(message.chat.id, "Введите вычисляемое выражение для для комплексных чисел (+,-,/,*)")
+            bot.send_message(message.chat.id, "Введите вычисляемое выражение для комплексных чисел (+,-,/,*) через пробел: ")
             bot.register_next_step_handler(message, comp_number)
 
     def int_numbers(message):
@@ -62,20 +62,25 @@ def main():
 
     def comp_number(message):
         data_in = message.text.split()
-        sign = data_in[2]
-        a = complex(data_in[0])
-        b = complex(data_in[1])
-        modul.init(a, b)
-        res = "Ошибка ввода"
-        if sign == "+":
-            res = modul.summ()
-        elif sign == "-":
-            res = modul.diff()
-        elif sign == "*":
-            res = modul.multi()
-        elif sign == "/":
-            res = modul.div()
-        bot.send_message(message.chat.id, f"{a} {sign} {b} = {res}")
-        button(message)
+        if len(data_in) < 3:
+            bot.send_message(message.chat.id, "Ошибка ввода!")
+            log.log(message)
+            button(message)
+        else:
+            sign = data_in[1]
+            a = complex(data_in[0])
+            b = complex(data_in[2])
+            modul.init(a, b)
+            res = "Ошибка ввода"
+            if sign == "+":
+                res = modul.summ()
+            elif sign == "-":
+                res = modul.diff()
+            elif sign == "*":
+                res = modul.multi()
+            elif sign == "/":
+                res = modul.div()
+            bot.send_message(message.chat.id, f"{a} {sign} {b} = {res}")
+            button(message)
 
     bot.infinity_polling()
