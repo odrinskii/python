@@ -56,6 +56,10 @@ def main():
                 res = modul.div_cel()
             elif sign == "%":
                 res = modul.div_ost()
+            else:
+                bot.send_message(message.chat.id, "Ошибка ввода!")
+                log.log(message)
+                button(message)
             bot.send_message(message.chat.id, f"{a} {sign} {b} = {res}")
             log.log(message)
             button(message)
@@ -80,6 +84,10 @@ def main():
                 res = modul.multi()
             elif sign == "/":
                 res = modul.div()
+            else:
+                bot.send_message(message.chat.id, "Ошибка ввода!")
+                log.log(message)
+                button(message)
             bot.send_message(message.chat.id, f"{a} {sign} {b} = {res}")
             button(message)
 

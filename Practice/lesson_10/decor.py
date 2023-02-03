@@ -1,12 +1,20 @@
-def say_hello():
-    print("hello")
+def decorator(func):
+    import time
 
-def hello():
-    print("Yuriy")
-    def say_hello():
-        print("hello")
-    return say_hello()
+    def wrapper(url):
+        start = time.time()
+        response = func(url)
+        end = time.time()
+        print(f"Ваше время {end - start}")
+        return response
+    return wrapper
 
 
+@decorator
+def request(url):
+    import requests
+    response = requests.get(url)
+    return response
 
 
+print(request("https://ya.ru"))
